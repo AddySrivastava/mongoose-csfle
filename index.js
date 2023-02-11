@@ -16,7 +16,7 @@ function getEncryptionKey() {
 const key = getEncryptionKey();
 const keyVaultNamespace = 'client.encryption';
 const kmsProviders = { local: { key } };
-const uriDev ='';
+const uriDev = process.env.CONN_STRING;
 
 async function main() {
   await mongoose
@@ -29,7 +29,7 @@ async function main() {
         keyVaultNamespace,
         kmsProviders,
         extraOptions: {
-          cryptSharedLibPath: "./mongo_crypt_v1.dylib",
+          cryptSharedLibPath: "/usr/src/app/mongo_crypt_v1.so",
           cryptSharedLibRequired: true
         }
       },
@@ -41,7 +41,7 @@ async function main() {
         );
       },
       (err) => {
-        console.error({ message: err.message, metaData: err.stack });
+        console.error(err);
       }
     );
 
@@ -50,8 +50,9 @@ async function main() {
     kmsProviders,
   });
 
+
   const __key__ = await encryption.createDataKey('local');
-  await mongoose.connection.dropCollection('csfles').catch(() => {});
+  await mongoose.connection.dropCollection('csfles').catch(() => { });
   await mongoose.connection.createCollection('csfles', {
     validator: {
       $jsonSchema: {
