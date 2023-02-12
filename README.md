@@ -2,7 +2,7 @@
 
 ### PREREQUISITE 
 
-## Set environment varibable in heroku, *CONN_STRING* to MongoDB srv string. Setting>>CONFIG_VARS
+Set environment varibable in heroku, *CONN_STRING* to MongoDB srv string. Setting>>CONFIG_VARS
 
 ## Method 1: Deployment to Heroku using Github(Branch =  main)
 
