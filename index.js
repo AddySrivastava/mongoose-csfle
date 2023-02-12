@@ -29,7 +29,7 @@ async function main() {
         keyVaultNamespace,
         kmsProviders,
         extraOptions: {
-          cryptSharedLibPath: "/usr/src/app/mongo_crypt_v1.so",
+          cryptSharedLibPath: "mongo_crypt_v1_ubuntu.so",
           cryptSharedLibRequired: true
         }
       },
