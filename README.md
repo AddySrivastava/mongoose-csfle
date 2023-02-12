@@ -5,7 +5,7 @@
 This version is using main branch of this repostiory and is using stack22 of the heroku which uses Ubuntu22 as default, hence the shared crypt library is also for the Ubuntu compatible deployment. 
 
 ### Step 1: Clone the repository
-cd into the working directory and clone the repository `git clone -b csfle git@github.com:Pacifier24/mongoose-csfle.git`
+cd into the working directory and clone the repository `git clone -b main git@github.com:Pacifier24/mongoose-csfle.git`
 
 ### Step 2: Set heroku stack 
 `heroku stack:set heroku-22`
