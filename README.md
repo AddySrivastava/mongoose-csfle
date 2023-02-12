@@ -1,10 +1,27 @@
 # mongoose-csfle
 
-## Deployment to Heroku using Docker image
+## Method 1: Deployment to Heroku using Github
+
+This version is using main branch of this repostiory and is using stack22 of the heroku which uses Ubuntu22 as default, hence the shared crypt library is also for the Ubuntu compatible deployment. 
+
+### Step 1: Clone the repository
+cd into the working directory and clone the repository `git clone -b csfle git@github.com:Pacifier24/mongoose-csfle.git`
+
+### Step 2: Set heroku stack 
+`heroku stack:set heroku-22`
+
+### Step 3: Set remote to heroku git
+`heroku git:remote -a mongoosecsfle`
+
+### Step 4: Push and deploy
+`git push heroku master`
+
+
+## Method 2: Deployment to Heroku using Docker image
 
 This repository contains a docker image `Dockerfile` using node:14 as the base image. For CSFLE to function, it also requires a shared library which is compatible
 with the OS running the deployment. For instance the node:14 base image uses Debian as the underlying OS, and hence the default library is downloaded from for Debian
-via https://www.mongodb.com/try/download/enterprise. 
+via https://www.mongodb.com/try/download/enterprise. Moreover this method of deployment doesn't use heroku.yml option.
 
 ### Step 1: Download heroku CLI
 Install heroku CLI using the following link - https://devcenter.heroku.com/articles/heroku-cli
