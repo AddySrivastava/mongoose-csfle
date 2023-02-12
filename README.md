@@ -14,7 +14,7 @@ cd into the working directory and clone the repository `git clone -b csfle git@g
 `heroku git:remote -a mongoosecsfle`
 
 ### Step 4: Push and deploy
-`git push heroku master`
+`git push heroku main`
 
 
 ## Method 2: Deployment to Heroku using Docker image
