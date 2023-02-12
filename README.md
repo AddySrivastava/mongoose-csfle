@@ -1,5 +1,9 @@
 # mongoose-csfle
 
+### PREREQUISITE 
+
+## Set environment varibable in heroku, *CONN_STRING* to MongoDB srv string. Setting>>CONFIG_VARS
+
 ## Method 1: Deployment to Heroku using Github(Branch =  main)
 
 This version is using main branch of this repostiory and is using stack22 of the heroku which uses Ubuntu22 as default, hence the shared crypt library is also for the Ubuntu compatible deployment. 
