@@ -1,6 +1,6 @@
 # mongoose-csfle
 
-## Method 1: Deployment to Heroku using Github
+## Method 1: Deployment to Heroku using Github(Branch =  main)
 
 This version is using main branch of this repostiory and is using stack22 of the heroku which uses Ubuntu22 as default, hence the shared crypt library is also for the Ubuntu compatible deployment. 
 
@@ -17,7 +17,7 @@ cd into the working directory and clone the repository `git clone -b csfle git@g
 `git push heroku main`
 
 
-## Method 2: Deployment to Heroku using Docker image
+## Method 2: Deployment to Heroku using Docker image(Branch =  csfle-docker-deployment)
 
 This repository contains a docker image `Dockerfile` using node:14 as the base image. For CSFLE to function, it also requires a shared library which is compatible
 with the OS running the deployment. For instance the node:14 base image uses Debian as the underlying OS, and hence the default library is downloaded from for Debian
@@ -30,7 +30,7 @@ Install heroku CLI using the following link - https://devcenter.heroku.com/artic
 After Installing the heroku CLI, login in the heroku CLI via terminal using `heroku container:login` command, the CLI will redirect the user to the browser for login. 
 
 ### Step 3: Clone the repository
-cd into the working directory and clone the repository `git clone -b csfle git@github.com:Pacifier24/mongoose-csfle.git`
+cd into the working directory and clone the repository `git clone -b csfle-docker-deployment git@github.com:Pacifier24/mongoose-csfle.git`
 
 ### Step 4: Swtich to the team where the app is deployed
 Run the following command to set the team where the heroku app is created `export HEROKU_ORGANIZATION=<team-name>`
