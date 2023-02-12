@@ -2,7 +2,9 @@
 
 ### PREREQUISITE 
 
-Set environment varibable in heroku, *CONN_STRING* to MongoDB srv string. Setting>>CONFIG_VARS
+1. Install heroku CLI using the following link - https://devcenter.heroku.com/articles/heroku-cli
+2. Set environment varibable in heroku, *CONN_STRING* to MongoDB srv string. Setting>>CONFIG_VARS
+3. Run the following command to set the team where the heroku app is created `export HEROKU_ORGANIZATION=<team-name>`
 
 ## Method 1: Deployment to Heroku using Github(Branch =  main)
 
@@ -27,23 +29,17 @@ This repository contains a docker image `Dockerfile` using node:14 as the base i
 with the OS running the deployment. For instance the node:14 base image uses Debian as the underlying OS, and hence the default library is downloaded from for Debian
 via https://www.mongodb.com/try/download/enterprise. Moreover this method of deployment doesn't use heroku.yml option.
 
-### Step 1: Download heroku CLI
-Install heroku CLI using the following link - https://devcenter.heroku.com/articles/heroku-cli
-
-### Step 2: Login in heroku container CLI
+### Step 1: Login in heroku container CLI
 After Installing the heroku CLI, login in the heroku CLI via terminal using `heroku container:login` command, the CLI will redirect the user to the browser for login. 
 
-### Step 3: Clone the repository
+### Step 2: Clone the repository
 cd into the working directory and clone the repository `git clone -b csfle-docker-deployment git@github.com:Pacifier24/mongoose-csfle.git`
 
-### Step 4: Swtich to the team where the app is deployed
-Run the following command to set the team where the heroku app is created `export HEROKU_ORGANIZATION=<team-name>`
-
-### Step 5: Push the docker image to the heroku container registry(app name is mongoosecsfle)
+### Step 3: Push the docker image to the heroku container registry(app name is mongoosecsfle)
 Run the following command `heroku container:push web --app mongoosecsfle`
 
-### Step 6: Release/Deploy the container image
+### Step 4: Release/Deploy the container image
 Run the following command to release or deploy the container image, `heroku container:release web --app mongoosecsfle`
 
-### Step 7: Check for logs to confirm if the deployment was successful 
+### Step 5: Check for logs to confirm if the deployment was successful 
 Run the following command to check the logs `heroku logs --app mongoosecsfle`
