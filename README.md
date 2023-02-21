@@ -14,7 +14,7 @@ This version is using main branch of this repostiory and is using stack22 of the
 cd into the working directory and clone the repository `git clone -b main git@github.com:Pacifier24/mongoose-csfle.git`
 
 ### Step 2: Set heroku stack 
-`heroku stack:set heroku-22`
+`heroku stack:set heroku-22 -a mongoosecsfle`
 
 ### Step 3: Set remote to heroku git
 `heroku git:remote -a mongoosecsfle`
